@@ -78,8 +78,9 @@ func play(file string) error {
 }
 
 func run(args []string) int {
-	if len(args) == 0 {
+	if len(args) < 2 {
 		fmt.Fprintf(os.Stderr, "Empty word\n")
+		fmt.Fprintf(os.Stderr, "pe [word]\n")
 		return 1
 	}
 
