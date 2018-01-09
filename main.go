@@ -113,7 +113,7 @@ func run(args []string) int {
 		case <-sig:
 			return 0
 		default:
-			time.Sleep(time.Second * 1)
+			time.Sleep(time.Millisecond * 500)
 			err = play(file)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, err.Error())
