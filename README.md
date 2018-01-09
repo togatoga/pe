@@ -1,5 +1,5 @@
 # pe
-pe is a commnad line tool to pronunce english word in terminal.
+pe is a commnad line tool to pronunce an english word in terminal.
 
 ## Install
 
