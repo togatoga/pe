@@ -9,6 +9,7 @@ import (
 	"os/exec"
 	"os/signal"
 	"path/filepath"
+	"strings"
 	"syscall"
 	"time"
 
@@ -84,7 +85,7 @@ func run(args []string) int {
 		return 1
 	}
 
-	word := args[1]
+	word := strings.ToLower(args[1])
 	fmt.Printf("Searching for %s\n", word)
 	doc, err := request(word)
 	if err != nil {
