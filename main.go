@@ -87,7 +87,7 @@ func run(args []string) int {
 	var query string
 	for _, arg := range args[1:] {
 		if arg == "-h" || arg == "--help" {
-			fmt.Println("Pronounce english word in terminal")
+			fmt.Println("Pronounce an english word in terminal")
 			fmt.Println("pe [word]")
 			return 0
 		} else {
