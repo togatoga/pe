@@ -79,14 +79,25 @@ func play(file string) error {
 }
 
 func run(args []string) int {
-	if len(args) < 2 {
-		fmt.Fprintf(os.Stderr, "Empty word\n")
+	//empty
+	if len(args) == 1 {
 		fmt.Fprintf(os.Stderr, "pe [word]\n")
 		return 1
 	}
+	var query string
+	for _, arg := range args[1:] {
+		if arg == "-h" || arg == "--help" {
+			fmt.Println("Pronounce english word in terminal")
+			fmt.Println("pe [word]")
+			return 0
+		} else {
+			query = arg
+			break
+		}
+	}
 
-	word := strings.ToLower(args[1])
-	fmt.Printf("Searching for %s\n", word)
+	word := strings.ToLower(query)
+	fmt.Printf("Searching for %s\n", query)
 	doc, err := request(word)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, err.Error())
